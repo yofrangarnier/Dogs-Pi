@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const dogRouter = Router();
-const { allInfo} = require("../controller/dogcontroller");
+const { allInfo} = require("../controller/dogController");
 
 
 dogRouter.get("/", async (req, res) => {

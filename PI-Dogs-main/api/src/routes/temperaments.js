@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { getTemperaments } = require("../controller/temperacontroller");
+const { getTemperaments } = require("../controller/temperaController");
 const temperamentRouter = Router();
 
 temperamentRouter.get("/", async (req, res) => {
