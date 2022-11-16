@@ -1,0 +1,44 @@
+.home {
+  background-repeat: no-repeat;
+  background: url(../../images/logolindo.jpg);
+  background-size: cover;
+  position: absolute;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+
+.card {
+  width: 100px;
+  height: 400px;
+  margin: 30px auto;
+  border-radius: 20px;
+  box-shadow: -11px 11px 1px rgba(196, 58, 88, 0.932);
+  background: #fa782e;
+  background: -moz-linear-gradient(-45deg, #2b2624 8%, #851b20 83%);
+  background: -webkit-linear-gradient(-45deg, #2b2623 8%, #c82930 83%);
+  background: linear-gradient(135deg, #695c562d 8%, #2e2929 83%);
+  padding: 0 20px;
+  font-size:10px;
+  color: rgb(209, 199, 199);
+  padding-bottom: 50px;
+  width: 20em;
+  margin: 40px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+.card:hover {
+  transform: translate(10px,5%);
+}

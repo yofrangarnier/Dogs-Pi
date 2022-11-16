@@ -1,0 +1,12 @@
+.detail {
+    background-repeat: no-repeat;
+    background: url(../../images/logolindo.jpg);
+    background-size: cover;
+    position: absolute;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
