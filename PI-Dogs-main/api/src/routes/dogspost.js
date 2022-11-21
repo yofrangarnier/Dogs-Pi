@@ -3,44 +3,42 @@ const { Dog, Temperament } = require("../db");
 const dogRouter = Router();
 
 dogRouter.post("/", async (req, res) => {
-  
-    const {
-      name,
-      min_height,
-      max_height,
-      min_weight,
-      max_weight,
-      life_span,
-      image,
-      temperament,
-      createdInDb,
-    } = req.body;
-    if(!name || !min_height || !min_weight ) res.send("Creation failed missing data to add")
-    else{
-    try {
-    const dogCreated = await Dog.create({
-      name,
-      min_height,
-      max_height,
-      min_weight,
-      max_weight,
-      life_span,
-      image,
-      createdInDb, //le paso los mismos atributos del modelo porque lo voy a agregar a la base de datos
-    });
-
-    const temperamentDb = await Temperament.findAll({
-      where: {
-        name: temperament,
-      },
-    });
-
-    await dogCreated.addTemperament(temperamentDb);
-    res.status(201).json({ success: "Dog succesfully created!" });
+  const {
+    name,
+    min_height,
+    max_height,
+    min_weight,
+    max_weight,
+    life_span,
+    image,
+    temperament,
+    createdInDb,
+  } = req.body;
+  try {
+    if (name ||min_height || min_weight ) {
+      
+      const newDog = await Dog.create({
+        name,
+        min_height,
+        max_height,
+        min_weight,
+        max_weight,
+        life_span,
+        image,
+        createdInDb,
+      });
+      const createdDb = await Temperament.findAll({
+        where: { name: temperament },
+      });
+      console.log(name);
+      newDog.addTemperament(createdDb);
+      return res.status(200).send("Dog Created");
+    } else {
+      return res.status(404).send("Dog Not Created");
+    }
   } catch (error) {
-    res.status(400).json({ error: "Dog can't be created" });
+    console.log(error);
   }
-}
 });
 dogRouter.delete("/:id", async function (req, res) {
   const { id } = req.params;

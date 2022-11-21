@@ -1,4 +1,5 @@
 import React from "react";
+import style from "../Pagination/Pagination.module.css"
 
 
 const Pagination = ({ paginate, currentPage, postPerPage, totalPost }) => {
@@ -9,17 +10,17 @@ const Pagination = ({ paginate, currentPage, postPerPage, totalPost }) => {
   }
 
   return (
-    <div>
-      <ul>
-        <button onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}>
+    <nav className={style.nav}>
+      <ul className={style.list}>
+        <button  claseName={style.number}  onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}>
           Prev
         </button>
         {pages.map((number) => (
-          <button key={number} onClick={() => paginate(number)}>
+          <button  className={style.number} key={number} onClick={() => paginate(number)}>
             {number}
           </button>
         ))}
-        <button
+        <button className={style.number}
           onClick={() =>
             paginate(
               currentPage < pages.length ? currentPage + 1 : pages.length
@@ -29,7 +30,7 @@ const Pagination = ({ paginate, currentPage, postPerPage, totalPost }) => {
           Next
         </button>
       </ul>
-    </div>
+   </nav>
   );
 };
 export default Pagination;

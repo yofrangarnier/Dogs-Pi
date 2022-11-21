@@ -7,8 +7,8 @@ export const GET_TEMPERAMENT = "GET_TEMPERAMENT";
 export const GET_BREED_NAME = "GET_BREED_NAME";
 export const FILTER_DOGS = "FILTER_DOGS";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
-export const CLEAN = "CLEAN";
 export const ORDER = "ORDER";
+export const CLEAN = "CLEAN";
 
 export const getAllDogs = () => async (dispatch) => {
   await axios.get("http://localhost:3001/dogs").then((response) => {
@@ -43,46 +43,61 @@ export const getBreedName = (name) => async (dispatch) => {
 };
 export const getDogsId = (id) => {
   return async function (dispatch) {
-     await axios
-      .get(`http://localhost:3001/dogs/${id}`)
-      .then((response) => {
-        dispatch({
-          type: GET_DOG_DETAILS,
-          payload: response.data,
-        });
+    await axios.get(`http://localhost:3001/dogs/${id}`).then((response) => {
+      dispatch({
+        type: GET_DOG_DETAILS,
+        payload: response.data,
       });
+    });
   };
 };
-export const createDogs = (payload) => async (dispatch) => {
-  await axios.get(`http://localhost:3001/dogs`, payload).then((response) => {
-    dispatch({
-      type: CREATE_DOG,
-      payload: response.data,
-    });
-  });
+export const createDogs = (payload) => {
+  return async function (dispatch) {
+    try {
+      const response = await axios.post("http://localhost:3001/dogs", payload);
+      return dispatch({
+        type: "CREATE_DOG",
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 };
-export function filterDogs(payload) {
+export const deleteDog = (id) => {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`http://localhost:3001/dogs${id}`);
+      return dispatch({
+        type: "DELETE_DOG",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const filterDogs = (payload) => {
   return {
     type: FILTER_DOGS,
     payload,
   };
-}
+};
 
-export function filterTemperament(payload) {
+export const filterTemperament = (payload) => {
   return {
     type: FILTER_TEMPERAMENT,
     payload,
   };
-}
-export function orderBy(payload) {
+};
+export const orderBy = (payload) => {
   return {
     type: ORDER,
     payload,
   };
-}
-
-export function clean() {
+};
+export const clean = (payload) => {
   return {
     type: CLEAN,
+    payload,
   };
-}
+};

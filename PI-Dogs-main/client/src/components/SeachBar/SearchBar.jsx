@@ -1,8 +1,9 @@
 import  React, { useState }  from "react";
 import { useDispatch } from "react-redux";
 import { getBreedName } from "../../redux/action/actions";
+import style from "../SeachBar/SearchBar.module.css"
 
-const SearchBar = ({paginate}) => {
+const SearchBar = () => {
   const [searchDogs, setsearchDogs] = useState("")
   const dispatch = useDispatch()
 
@@ -15,11 +16,11 @@ setsearchDogs("")
   const handleOnchange = (e) => {
 e.preventDefault()
 setsearchDogs(e.target.value)
-paginate(1)
+
   }
 
   return (
-    <div>
+    <div className={style.select}>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Search Dogs..." value={searchDogs} onChange={handleOnchange}/>
         

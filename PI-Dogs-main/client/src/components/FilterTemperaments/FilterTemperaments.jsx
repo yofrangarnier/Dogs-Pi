@@ -5,6 +5,7 @@ import {
   getAllTemperament,
 } from "../../redux/action/actions";
 import { useEffect } from "react";
+import style from "../FilterTemperaments/FilterTemperaments.module.css"
 
 const FilterTemperament = () => {
   const temperament = useSelector((state) => state.temperaments);
@@ -32,8 +33,8 @@ const FilterTemperament = () => {
   };
 
   return (
-    <div>
-      <select onChange={onFilterTemperament}>
+    <div className={style.div}>
+      <select className={style.select} onChange={onFilterTemperament}>
         <option value="All Temperaments" key="All Temperaments">
           All Temperaments
           </option>

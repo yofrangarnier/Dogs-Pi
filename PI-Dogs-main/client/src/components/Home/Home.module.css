@@ -11,34 +11,78 @@
   justify-content: center;
 }
 
+.filters {
+  padding-left: 1rem;
+  padding-right: 0 ;
+  width: 100% ;
+  justify-content: center;
+  display: flex;
+ 
+}
+
 .pages {
   display: flex;
   justify-content: center;
   padding-left: 0 !important;
   padding-right: 0 !important;
   width: 100% !important;
+ 
 }
 
 .card {
-  width: 100px;
-  height: 400px;
-  margin: 30px auto;
-  border-radius: 20px;
-  box-shadow: -11px 11px 1px rgba(196, 58, 88, 0.932);
-  background: #fa782e;
-  background: -moz-linear-gradient(-45deg, #2b2624 8%, #851b20 83%);
-  background: -webkit-linear-gradient(-45deg, #2b2623 8%, #c82930 83%);
-  background: linear-gradient(135deg, #695c562d 8%, #2e2929 83%);
-  padding: 0 20px;
-  font-size:10px;
-  color: rgb(209, 199, 199);
   padding-bottom: 50px;
-  width: 20em;
-  margin: 40px;
+  width: 18em;
+  margin: 30px;
   display: inline-block;
   align-items: center;
   justify-content: center;
 }
-.card:hover {
-  transform: translate(10px,5%);
+
+.button {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0px 20px 0px;
+}
+
+.box {
+  width: 140px;
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px 30px 15px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: 'Fredoka One', cursive;
+}
+.btnCreate {
+  display: flexbox;
+  font-family: "dogSolid";
+  align-items: flex-end;
+  font-size: 15px;
+  border: solid;
+  padding: 10px 32px;
+  text-align: center;
+  box-shadow: 3px 3px 5px #ca1b81;
+  cursor: pointer;
+  background-color: rgba(175, 45, 143, 0.582);
+  margin-left: 90%;
+  margin-top: 5px;
+}
+
+.h1{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 20%;
+  color: #ca1b81;
 }

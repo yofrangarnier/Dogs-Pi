@@ -1,12 +1,37 @@
-.detail {
-    background-repeat: no-repeat;
-    background: url(../../images/logolindo.jpg);
-    background-size: cover;
-    position: absolute;
-    overflow-y: scroll;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
+.container {
+  background-repeat: no-repeat;
+  background: url(../../images/logolindo.jpg);
+  background-size: cover;
+  position: absolute;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+.name {
+  font-size: 2.2em;
+  margin-top: 25px;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  color: rgb(224, 19, 139);
+} 
+
+.p {
+  font-size: 1rem;
+  color: rgb(224, 19, 139);
+}
+.img {
+  width: 600px;
+  height: 430px;
+  margin-right: 2em;
+  border: 25px solid rgba(207, 19, 107, 0.76);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(197, 19, 167, 0.473);
+}
+.main {
+  display: flex;
+  margin-top: 3em;
+  justify-content: center;
+  align-items: center;
+}

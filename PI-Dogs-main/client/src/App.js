@@ -3,22 +3,25 @@ import LandigPage from "./components/LandingPage/LandindPage";
 import Home from "./components/Home/Home";
 import BreedDetail from "./components/BreedDetail/BreedDetail"
 import CreateBreed from "./components/CreateBreed/CreateBreed";
+import "./App.css"
 
 function App() {
   return (
     <BrowserRouter>
+    <div className="App">
       <Route exact path="/">
         <LandigPage />
       </Route>
-      <Route exact path="/home">
+      <Route path="/home">
         <Home />
       </Route>
-      <Route exact path="/home/:id">
+      <Route path="/home/:id">
         <BreedDetail />
       </Route>
-      <Route exact path="/createdogs">
+      <Route path="/createdogs">
         <CreateBreed />
       </Route>
+      </div>
     </BrowserRouter>
   );
 }

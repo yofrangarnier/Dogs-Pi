@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDogs } from "../../redux/action/actions";
 import BreedCards from "../BreedCards/BreedCards";
-import NavBar from "../NavBar/NavBar";
+import Order from "../OrderA-Z/Order-AZ";
 import Pagination from "../Pagination/Pagination";
+import FilterDogs from "../FilterDogs/FilterDogs";
 import style from "../Home/Home.module.css";
+import FilterTemperaments from "../FilterTemperaments/FilterTemperaments";
+
+import FilterWeight from "../FilterWeight/FilterWeight";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,26 +29,38 @@ const Home = () => {
 
   return (
     <div className={style.home}>
-      <Link to="/home">Create Dogs</Link>
-      <h1>My Little Dogs</h1>
+      <div className={style.h1}>
+        <h1 >My Little Dogs</h1>
+      </div>
+      <div>
+        <button className={style.btnCreate}>
+          <Link to="/createdogs">
+            <span className={style.box}>CREATE DOG</span>
+          </Link>
+        </button>
+      </div>
 
-      <di>
-        <NavBar paginate={paginate} />
-      </di>
+      <div className={style.filters}>
+        <FilterWeight />
+        <Order paginate={paginate} />
+
+        <FilterDogs paginate={paginate} />
+
+        <FilterTemperaments />
+      </div>
       <div>
         {currentPosts?.map((e) => {
           return (
             <div className={style.card}>
-              <Link to={"/home/" + e.id}>
-                <BreedCards
-                  key={e.id}
-                  name={e.name}
-                  image={e.image}
-                  max_weight={e.max_weight}
-                  min_weight={e.min_weight}
-                  temperament={e.temperament}
-                />
-              </Link>
+              <BreedCards
+                id={e.id}
+                key={e.id}
+                name={e.name}
+                image={e.image}
+                max_weight={e.max_weight}
+                min_weight={e.min_weight}
+                temperament={e.temperament}
+              />
             </div>
           );
         })}

@@ -6,8 +6,9 @@ import {
   GET_TEMPERAMENT,
   ORDER,
   FILTER_DOGS,
-  CLEAN,
   GET_DOG_DETAILS,
+  DELETE_DOG,
+  CLEAN,
 } from "../action/actions";
 import { A_Z, Z_A, WEIGHT_MAX, WEIGHT_MIN } from "../../constante/A-Z";
 
@@ -16,7 +17,6 @@ const initialState = {
   dogsclean: [],
   dogsDetail: [],
   temperaments: [],
-  newDogs: {},
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -39,7 +39,10 @@ const rootReducer = (state = initialState, action) => {
     case CREATE_DOG:
       return {
         ...state,
-        newDogs: action.payload,
+      };
+    case DELETE_DOG:
+      return {
+        ...state,
       };
     case GET_DOG_DETAILS:
       return {
@@ -89,6 +92,7 @@ const rootReducer = (state = initialState, action) => {
         action.payload === "dogs of the api"
           ? state.dogsclean.filter((d) => !d.createdInDb)
           : state.dogsclean.filter((d) => d.createdInDb);
+
       return {
         ...state,
         dogs: action.payload === "all Dogs" ? state.dogsclean : createdFilter,
@@ -96,8 +100,9 @@ const rootReducer = (state = initialState, action) => {
     case CLEAN:
       return {
         ...state,
-        dogsdetail: [],
+        dogsDetail: [],
       };
+
     default:
       return { ...state };
   }

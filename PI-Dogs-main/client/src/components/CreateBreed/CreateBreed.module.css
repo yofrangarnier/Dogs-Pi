@@ -1,0 +1,129 @@
+
+.containerform {
+  display: cover;
+  background-image: url(../../images/logolindo.jpg);
+  background-position:top;
+  position: absolute;
+  width: 100%;
+  margin: 0%;
+  
+}
+
+.form {
+  display: cover;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 2rem;
+  background: -webkit-linear-gradient(-45deg, #2b2623 8%, #c82930 83%);
+  background: linear-gradient(135deg, #695c562d 8%, #2e2929 83%);
+  height: 30%;
+  width: 32%;
+  flex-direction:column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  bottom: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-family: "Dogs";
+}
+
+h2 {
+  font-family: "Dogs";
+  text-align: center;
+  font-size: 40px;
+
+}
+
+h3 {
+  font-family: "Dogs";
+  font-size: 25px;
+}
+
+
+.btnBack{
+  display:inline-block;
+  font-family: "Dogs";
+  font-size: 30px;
+  border:solid;
+  padding:10px 42px;
+  margin:3px 1px;
+  text-align: center;
+  box-shadow: 3px 3px 13px #FD540D;
+  margin-top:10%;
+  cursor:pointer;
+  background-color: antiquewhite;
+
+}
+
+.btnSubmit{
+  display:inline-block;
+  font-family: "Dgs";
+  font-size: 30px;
+  border:solid;
+  padding:10px 42px;
+  margin:3px 1px;
+  text-align: center;
+  box-shadow: 3px 3px 13px #FD540D;
+  margin-top:10%;
+  cursor:pointer;
+  background-color: antiquewhite;
+}
+.btnX{display:inline-block;
+  font-family: "Dogs";
+  font-size: 10px;
+  border:solid;
+  padding:6px 6px;
+  margin:2px 2px;
+  text-align: center;
+  box-shadow: 3px 3px 13px #FD540D;
+  margin-top:2%;
+  cursor:pointer;
+  background-color: antiquewhite;
+
+}
+.select {
+  display: flex;
+  flex-direction: row;
+  font-family: "Dogs";
+  font-size: 16px;
+  border: solid;
+  padding:9px 30px;
+  margin: 4px 40px;
+  text-align: center;
+  box-shadow: 3px 3px 13px #FD540D;
+  margin-top:10%;
+  margin-bottom: 5%;
+  margin-left: 40%;
+  justify-content: space-around;
+  align-content: center;
+  position:relative;
+  background-color: antiquewhite;
+
+}
+.select-items .select-selected {
+  background-color: #FD540D;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 0;
+
+}
+
+.placeholder{
+  display:inline-block;
+  font-family: "Dogs";
+  font-size: 16px;
+  border:solid;
+  padding:15px 32px;
+  margin:4px 2px;
+  text-align: center;
+  box-shadow: 3px 3px 13px #FD540D;
+  margin-top:10%;
+
+}
+.error {
+  color:red;
+}

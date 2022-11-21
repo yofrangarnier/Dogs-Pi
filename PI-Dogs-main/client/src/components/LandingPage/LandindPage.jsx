@@ -6,10 +6,10 @@ const LandingPage = () => {
   return (
     <div className={style.title}>
       <section className={style}>
-        <h1 className={style.h1}>Welcome to City dogs</h1>
+        <h1 className={style.h1}><i>Welcome to City dog</i></h1>
         <Link to="/Home">
           <button className={style.btn} onClick="home">
-            Lets Start
+            Enter
           </button>
         </Link>
       </section>
