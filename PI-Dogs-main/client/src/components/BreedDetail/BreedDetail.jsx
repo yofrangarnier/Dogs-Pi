@@ -6,6 +6,7 @@ import { getDogsId,clean } from "../../redux/action/actions";
 import style from "../BreedDetail/BreedDetail.module.css";
 
 
+
 const BreedsDetail = (props) => {
   const dispatch = useDispatch();
   const { id } = useParams();

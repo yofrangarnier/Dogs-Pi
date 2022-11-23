@@ -15,7 +15,7 @@ dogRouter.post("/", async (req, res) => {
     createdInDb,
   } = req.body;
   try {
-    if (name ||min_height || min_weight ) {
+    
       
       const newDog = await Dog.create({
         name,
@@ -33,11 +33,11 @@ dogRouter.post("/", async (req, res) => {
       console.log(name);
       newDog.addTemperament(createdDb);
       return res.status(200).send("Dog Created");
-    } else {
-      return res.status(404).send("Dog Not Created");
-    }
+    
+      
+   
   } catch (error) {
-    console.log(error);
+    return res.status(404).send("Dog Not Created");
   }
 });
 dogRouter.delete("/:id", async function (req, res) {

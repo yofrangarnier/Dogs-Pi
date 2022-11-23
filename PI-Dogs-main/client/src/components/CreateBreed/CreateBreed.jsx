@@ -26,7 +26,7 @@ const CreateBreed = () => {
     });
     setError(
       validation({
-        [e.target.value]: e.target.value,
+        [e.target.name]: e.target.value,
       })
     );
   };

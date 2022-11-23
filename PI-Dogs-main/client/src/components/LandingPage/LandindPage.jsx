@@ -2,6 +2,7 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import style from "../LandingPage/landingpage.module.css";
 
+
 const LandingPage = () => {
   return (
     <div className={style.title}>

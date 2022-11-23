@@ -51,8 +51,8 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case FILTER_TEMPERAMENT:
-      const dogsTemp = state.dogsclean.filter((d) =>
-        d.temperament?.includes(action.payload) ? d : null
+      const dogsTemp = state.dogsclean.filter((e) =>
+        e.temperament?.includes(action.payload) ? e : null
       );
       return {
         ...state,
@@ -90,8 +90,8 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_DOGS:
       const createdFilter =
         action.payload === "dogs of the api"
-          ? state.dogsclean.filter((d) => !d.createdInDb)
-          : state.dogsclean.filter((d) => d.createdInDb);
+          ? state.dogsclean.filter((e) => !e.createdInDb)
+          : state.dogsclean.filter((e) => e.createdInDb);
 
       return {
         ...state,
