@@ -15,3 +15,11 @@
   margin-top: 20%;
   margin-left: 60%;
 }
+.buttonSearch{
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px, black;
+  color: black;     
+  font-size: 15px;
+  
+}

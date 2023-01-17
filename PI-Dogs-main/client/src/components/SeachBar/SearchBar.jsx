@@ -4,18 +4,18 @@ import { getBreedName } from "../../redux/action/actions";
 import style from "../SeachBar/SearchBar.module.css"
 
 const SearchBar = () => {
-  const [searchDogs, setsearchDogs] = useState("")
+  const [searchDogs, setSearchDogs] = useState("")
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
 e.preventDefault()
-if(!searchDogs) return alert("Dogs is Require")
+if(!searchDogs)  alert(" Name Dogs is Require")
 dispatch(getBreedName(searchDogs))
-setsearchDogs("")
+setSearchDogs("")
   }
   const handleOnchange = (e) => {
 e.preventDefault()
-setsearchDogs(e.target.value)
+setSearchDogs(e.target.value)
 
   }
 
@@ -23,7 +23,7 @@ setsearchDogs(e.target.value)
     <div className={style.select}>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Search Dogs..." value={searchDogs} onChange={handleOnchange}/>
-        
+        <input type="submit" value="Buscar" className={style.buttonSearch}/>
       </form>
     </div>
   );

@@ -9,7 +9,7 @@ export const FILTER_DOGS = "FILTER_DOGS";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const ORDER = "ORDER";
 export const CLEAN = "CLEAN";
-
+export const FIILTER_WEIGHT = "FIILTER_WEIGHT"
 export const getAllDogs = () => async (dispatch) => {
   const response = await axios.get("http://localhost:3001/dogs");
   return dispatch({
@@ -84,6 +84,12 @@ export const orderBy = (payload) => {
 export const clean = (payload) => {
   return {
     type: "CLEAN",
+    payload,
+  };
+};
+export const filterWeight = (payload) => {
+  return {
+    type: "FIILTER_WEIGHT",
     payload,
   };
 };

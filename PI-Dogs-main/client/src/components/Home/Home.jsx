@@ -51,10 +51,9 @@ const Home = () => {
       <div>
         {currentPosts?.map((e) => {
           return (
-            <div className={style.card}>
+            <div className={style.card} key={e.id}>
               <BreedCards
                 id={e.id}
-                key={e.id}
                 name={e.name}
                 image={e.image}
                 max_weight={e.max_weight}
