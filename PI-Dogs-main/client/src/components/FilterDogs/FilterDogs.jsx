@@ -12,9 +12,9 @@ const FilterDogs = () => {
   return (
     <div className={style.div}>
       <select className={style.select} onClick={onFilterDogs}>
-        <option value="all Dogs">allDogs</option>
-        <option value="dogs of the api">dogs of the api</option>
-        <option value="new dogs">new dogs</option>
+        <option value="all Dogs">AllDogs</option>
+        <option value="dogs of the api">Dogs of the api</option>
+        <option value="new dogs">New dogs</option>
       </select>
     </div>
   );

@@ -3,7 +3,7 @@
   height: 17em;
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  
 }
 
 .content {
@@ -13,9 +13,9 @@
   font-family: 'Fredoka One', cursive;
   color: rgba(0, 0, 0, 0.8);
   transition: all 1.65s;
-  background: linear-gradient(180deg, #f04b9d50 10%, #883f929c 80%);
+  background: #c5981c;
   border-radius: 10px;
-  box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 2px 3px rgba(0, 0, 0, 0.5);
   padding: 9em;
   transform-style: preserve-3d;
 }
@@ -40,19 +40,20 @@
   transform: translateZ(5rem);
   width: 100%;
   height: 80%;
-  border-radius: 10px;
+
 }
 
 .subtitle {
   transform: translateZ(2rem);
   font-size: 1.2em;
   margin-top: 15px;
+  color:aliceblue
 }
 
 .back {
   display: inline-block;
   transform: rotateY(0.5turn);
-  background: rgba(158, 71, 18, 0.323);
+  background: #c5981c;
   border-width: 2px;
   border-radius: 10px;
 }
@@ -60,14 +61,19 @@
 .description {
   transform: translateZ(3rem);
   font-size: 1.2em;
+  color: aliceblue;
 }
 
 .description2 {
   transform: translateZ(3rem);
   font-size: 1.2em;
+  color: aliceblue;
 }
 
 .link {
   text-decoration: none;
+}
+.p{
+  color: aliceblue;
 }
  

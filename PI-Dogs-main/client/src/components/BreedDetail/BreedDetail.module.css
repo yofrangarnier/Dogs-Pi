@@ -1,37 +1,91 @@
 .container {
-  background-repeat: no-repeat;
-  background: url(../../images/logolindo.jpg);
-  background-size: cover;
-  position: absolute;
-  overflow-y: scroll;
-  height: 100%;
-  width: 100%;
-}
-.name {
-  font-size: 2.2em;
-  margin-top: 25px;
-  margin-bottom: 0.5em;
-  display: flex;
-  justify-content: center;
-  color: rgb(224, 19, 139);
-} 
-
-.p {
-  font-size: 1rem;
-  color: rgb(245, 13, 195);
-}
-.img {
-  width: 600px;
-  height: 430px;
-  margin-right: 2em;
-  border: 25px solid rgba(207, 19, 107, 0.76);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(197, 19, 167, 0.473);
-}
-.main {
-  display: flex;
-  margin-top: 3em;
-  justify-content: center;
-  align-items: center;
-}
+    background-repeat: no-repeat;
+    background: url(../../images/dope.jpg);
+    background-size: cover;
+    position: absolute;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .main {
+    display: flex;
+    margin-top: 3em;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  .img {
+    width: 600px;
+    height: 430px;
+    margin-right: 2em;
+    border: 25px solid rgba(245, 245, 245, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .data {
+    width: 400px;
+    height: 330px;
+    padding: 3em;
+    border: 25px solid rgba(68, 46, 124, 0.51);
+    background-color: rgba(245, 245, 245, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    font-family: "Sniglet", cursive;
+    color: #000000e2;
+  }
+  
+  .name {
+    font-size: 2.2em;
+    margin-top: -25px;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+  } 
+  
+  .p {
+    font-size: 1.2em;
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .article {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .img {
+      width: 90%;
+      height: 40%;
+      margin: -40px 0px 30px 0px;
+      border: 10px solid rgba(245, 245, 245, 0.6);
+      backdrop-filter: blur(3px)
+    }
+  
+    .data {
+      width: 60%;
+      height: 40%;
+      border: 10px solid rgba(68, 46, 124, 0.51);
+      background-color: rgba(245, 245, 245, 0.6);
+      backdrop-filter: blur(3px);
+    }
+  
+    .name {
+      font-size: 1.8em;
+    } 
+    
+    .p {
+      font-size: 1em;
+    }
+  }

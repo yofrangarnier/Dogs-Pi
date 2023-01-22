@@ -11,16 +11,16 @@ const FilterTemperament = () => {
   const temperament = useSelector((state) => state.temperaments);
   const dispatch = useDispatch();
 
-  const temperamentsOrder = temperament.sort((a, b) => {
-    //se ordena alfabeticamente para que salga bien en el select
-    if (a.name > b.name) {
-      return 1;
-    }
-    if (a.name < b.name) {
-      return -1;
-    }
-    return 0;
-  });
+  // const temperamentsOrder = temperament.sort((a, b) => {
+  //   //se ordena alfabeticamente para que salga bien en el select
+  //   if (a.name > b.name) {
+  //     return 1;
+  //   }
+  //   if (a.name < b.name) {
+  //     return -1;
+  //   }
+  //   return 0;
+  // });
 
   useEffect(() => {
     dispatch(getAllTemperament());
@@ -38,8 +38,8 @@ const FilterTemperament = () => {
         <option value="All Temperaments" key="All Temperaments">
           All Temperaments
           </option>
-        {temperamentsOrder.length > 0 &&
-          temperamentsOrder.map((el) => (
+        {temperament.length > 0 &&
+          temperament.map((el) => (
             <option value={el.name} key={el.name}>
               {el.name}
               </option>

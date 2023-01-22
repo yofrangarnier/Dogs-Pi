@@ -4,7 +4,7 @@ import style from "../BreedCards/BreedCards.module.css";
 const BreedCards = (props) => {
   return (
     <>
-      <Link className={style.link} to={`/home/${props.id}`}>
+      <Link className={style.link} to={`/detail/${props.id}`}>
         <div className={style.card} key={props.id}>
           <div className={style.content}>
             <div className={style.front}>
@@ -18,7 +18,7 @@ const BreedCards = (props) => {
             </div>
             <div className={style.back}>
               <h4 className={style.description}>Temperament: </h4>
-              <p>{props.temperament}</p>
+              <p className={style.p}>{props.temperament}</p>
               <h5 className={style.description2}>
                 Weight: min: {props.min_weight}/ kg - max: {props.max_weight}/
                 kg{" "}

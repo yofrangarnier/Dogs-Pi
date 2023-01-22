@@ -1,26 +1,23 @@
 import React from "react";
-import FilterDogs from "../FilterDogs/FilterDogs";
 import SearchBar from "../SeachBar/SearchBar";
-import Order from "../OrderA-Z/Order-AZ";
-import FilterTemperaments from "../FilterTemperaments/FilterTemperaments";
-// import style from "../NavBar/NavBar.module.css";
+import style from "../NavBar/NavBar.module.css";
+import { Link } from "react-router-dom";
 
-const NavBar = (paginate) => {
+
+const NavBar = () => {
   return (
-    <div >
-      <button onClick={() => window.location.reload()}>Refresh Dogs</button>
-      
-        <SearchBar />
-      
-      
-        <Order paginate={paginate} />
-      
-      
-        <FilterDogs paginate={paginate} />
-      
-      
-        <FilterTemperaments />
-      
+    <div className={style.navbar}>
+      <div>
+        <button className={style.btnes}>
+          <Link to="/home">Home</Link>
+        </button>
+      </div>
+      <SearchBar />
+      <div>
+        <button className={style.btnes}>
+          <Link to="/createdogs">Create Dog</Link>
+        </button>
+      </div>
     </div>
   );
 };

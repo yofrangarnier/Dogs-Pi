@@ -1,5 +1,5 @@
 import { React } from "react";
-import { Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDogs } from "../../redux/action/actions";
@@ -9,8 +9,9 @@ import Pagination from "../Pagination/Pagination";
 import FilterDogs from "../FilterDogs/FilterDogs";
 import style from "../Home/Home.module.css";
 import FilterTemperaments from "../FilterTemperaments/FilterTemperaments";
-
-import FilterWeight from "../FilterWeight/FilterWeight";
+import NavBar from "../NavBar/NavBar";
+import Carousel from "../Carousel/Carousel";
+import Loader from "../Loading/Loading";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -28,42 +29,39 @@ const Home = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className={style.home}>
+    <div >
+      <NavBar />
       <div className={style.h1}>
-        <h1 >My Little Dogs</h1>
+      <h1 >Welcome to my city dogs</h1>
       </div>
-      <div>
-        <button className={style.btnCreate}>
-          <Link to="/createdogs">
-            <span className={style.box}>CREATE DOG</span>
-          </Link>
-        </button>
-      </div>
-
-      <div className={style.filters}>
-        <FilterWeight />
+      <Carousel/>
+      <div className={style.filter}>
         <Order paginate={paginate} />
-
         <FilterDogs paginate={paginate} />
-
         <FilterTemperaments />
-      </div>
-      <div>
-        {currentPosts?.map((e) => {
-          return (
-            <div className={style.card} key={e.id}>
-              <BreedCards
-                id={e.id}
-                name={e.name}
-                image={e.image}
-                max_weight={e.max_weight}
-                min_weight={e.min_weight}
-                temperament={e.temperament}
-              />
+        </div>
+      
+        {currentPosts.length > 0 ? (
+          currentPosts.map((e) => {
+            return (
+              <div className={style.card} key={e.id}>
+                <BreedCards
+                  id={e.id}
+                  name={e.name}
+                  image={e.image}
+                  max_weight={e.max_weight}
+                  min_weight={e.min_weight}
+                  temperament={e.temperament}
+                />
+              </div>
+            );
+          })
+          ) : (
+            <div className={style.loader}>
+              <Loader />
             </div>
-          );
-        })}
-      </div>
+          )}
+        
       <div className={style.pages}>
         <Pagination
           paginate={paginate}

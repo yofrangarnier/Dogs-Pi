@@ -15,7 +15,7 @@ function App() {
       <Route path="/home">
         <Home />
       </Route>
-      <Route path="/home/:id">
+      <Route path="/detail/:id">
         <BreedDetail />
       </Route>
       <Route path="/createdogs">

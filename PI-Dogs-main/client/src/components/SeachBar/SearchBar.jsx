@@ -20,10 +20,10 @@ setSearchDogs(e.target.value)
   }
 
   return (
-    <div className={style.select}>
+    <div className={style.searchbar}>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Search Dogs..." value={searchDogs} onChange={handleOnchange}/>
-        <input type="submit" value="Buscar" className={style.buttonSearch}/>
+        <input className={style.input} type="text" placeholder="Search Dogs..." value={searchDogs} onChange={handleOnchange}/>
+        <input  type="submit" value="Buscar" className={style.btn}/>
       </form>
     </div>
   );

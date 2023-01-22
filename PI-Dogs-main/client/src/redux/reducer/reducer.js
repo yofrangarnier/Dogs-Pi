@@ -9,7 +9,6 @@ import {
   GET_DOG_DETAILS,
   DELETE_DOG,
   CLEAN,
-  FIILTER_WEIGHT,
 } from "../action/actions";
 import { A_Z, Z_A, WEIGHT_MAX, WEIGHT_MIN } from "../../constante/A-Z";
 
@@ -62,48 +61,34 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER:
-      let orderAz = [...state.dogs];
+      let orderAz = [...state.dogs]
       orderAz = orderAz.sort((a, b) => {
-        switch (action.payload) {
-          
-          case A_Z:
-            if (a.name < b.name) {
-              return -1;
-            } else return 1;
-          case Z_A:
-            if (a.name > b.name) {
-              return -1;
-            } else return 1;
-          default:
-            return 0;
-        }
-      });
+          switch(action.payload){
+              case A_Z:
+                  if(a.name < b.name) {
+                      return -1;
+                  } else return 1
+              case Z_A:
+                  if(a.name > b.name) {
+                      return -1;
+                  } else return 1
+              case WEIGHT_MAX:
+                  if(a.max_weight > b.max_weight) {
+                      return -1
+                  } else return 1
+              case WEIGHT_MIN:
+                  if(a.min_weight < b.min_weight) {
+                      return -1
+                  } else return 1
+              default: return 0;
+              }  
+      })
     
       return {
         ...state,
         dogs: orderAz,
       };
-      case FIILTER_WEIGHT :
-        let filterWeight = [...state.dogs];
-     filterWeight = filterWeight.sort((a, b) => {
-        switch (action.payload) {
-
-         
-      case WEIGHT_MAX:
-        if (a.max_weight > b.max_weight) {
-          return -1;
-        } else return 1;
-      case WEIGHT_MIN:
-        if (a.min_weight < b.min_weight) {
-          return -1;
-        } else return 1;
-        default:
-          return 0;
-      }
-    })
-    return {
-      dogs : filterWeight
-    }
+     
    
     
     case FILTER_DOGS:

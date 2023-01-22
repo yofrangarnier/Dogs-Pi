@@ -131,11 +131,10 @@ const CreateBreed = () => {
     return error;
   };
   return (
-    <div className={style.containerform}>
-      <form className={style.form} onSubmit={handleSubmit}>
-        <h2 className={style.h2}>Welcome Dogs Happy</h2>
+    <div className={style.signupcontainer}>
+      <form className={style.formcontainer} onSubmit={handleSubmit}>
+      <h2 className={style.h2}>Welcome Dogs Happy</h2>
         <h3 className={style.h3}>Create Your Dog</h3>
-        <div>
           <label>Name: </label>
           <input
             type="text"
@@ -144,11 +143,11 @@ const CreateBreed = () => {
             onChange={handleInput}
             placeholder="Name Dog"
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.name && <p>{error.name}</p>}
-        </div>
-        <div>
+          {error.name ? ( <p className={style.error}>{error.name}</p>) : null}
+        
+      
           <label>min_height: </label>
           <input
             type="text"
@@ -158,11 +157,11 @@ const CreateBreed = () => {
             maxLength={3}
             placeholder="Height Min"
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.min_height && <p>{error.min_height}</p>}
-        </div>
-        <di>
+          {error.min_height ? ( <p className={style.error}>{error.min_height}</p>) : null}
+        
+       
           <label>max_height: </label>
           <input
             type="text"
@@ -172,11 +171,11 @@ const CreateBreed = () => {
             placeholder="Height Max"
             maxLength={3}
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.max_height && <p>{error.max_height}</p>}
-        </di>
-        <div>
+          {error.max_height ? ( <p className={style.error}>{error.max_height}</p>) : null}
+        
+        
           <label>min_weight: </label>
           <input
             type="text"
@@ -186,11 +185,11 @@ const CreateBreed = () => {
             placeholder="Weight Min"
             maxLength={2}
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.min_weight && <p>{error.min_weight}</p>}
-        </div>
-        <div>
+          {error.min_weight ? ( <p className={style.error}>{error.min_weight}</p>) : null}
+        
+        
           <label>max_weight: </label>
           <input
             type="text"
@@ -200,11 +199,11 @@ const CreateBreed = () => {
             placeholder="Weght Max"
             maxLength={3}
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.max_weight && <p>{error.max_weight}</p>}
-        </div>
-        <div>
+          {error.max_weight ? ( <p className={style.error}>{error.max_weight}</p>) : null}
+        
+       
           <label>life_span: </label>
           <input
             type="text"
@@ -214,11 +213,11 @@ const CreateBreed = () => {
             placeholder="Life Span"
             maxLength={2}
             required="true"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.life_span && <p>{error.life_span}</p>}
-        </div>
-        <div>
+          {error.life_span ? ( <p className={style.error}>{error.life_span}</p> ) : null}
+        
+        
           <label>image: </label>
           <input
             type="text"
@@ -226,27 +225,27 @@ const CreateBreed = () => {
             name="image"
             onChange={handleInput}
             placeholder="Img - Url"
-            className={style.placeholder}
+            className={style.input}
           />
-          {error.image && <p>{error.image}</p>}
-        </div>
-        <div>
+          {error.image ? ( <p className={style.error}>{error.image}</p> ) : null}
+        
+        
           <label>temperament: </label>
-          <div>
-            <select className={style.select} onChange={handleSelect}>
+          
+            <select className={style.input} onChange={handleSelect}>
               {temperamentAll.map((e) => (
                 <option  value={e.name}>{e.name}</option>
               ))}
             </select>
-          </div>
-          {error.temperament && <p>{error.temperament}</p>}
-        </div>
+         
+          {error.temperament ? ( <p className={style.error}>{error.temperament}</p>) : null}
+       
         <div>
           {create.temperament.map((e) => (
             <div key={e}>
               {e}
-              <button className={style.btnx} type="button" onClick={() => handleDelete(e)}>
-                x
+              <button className={style.btnes} type="button" onClick={() => handleDelete(e)}>
+              🗑️
               </button>
             </div>
           ))}
@@ -254,11 +253,11 @@ const CreateBreed = () => {
         <ul>
           <li>{create.temperament.map((e) => e + " , ")}</li>
         </ul>
-        <button className={style.btnSubmit} type="submit">
+        <button className={style.btn} type="submit">
           Create Dogs
         </button>
         <Link to="/home">
-          <button className={style.btnBack}>Back Home</button>
+          <button className={style.btn}>Back Home</button>
         </Link>
       </form>
     </div>
