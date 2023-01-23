@@ -1,63 +1,72 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getDogsId,clean } from "../../redux/action/actions";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import img from "../../images/dogcreated.png";
 import style from "../BreedDetail/BreedDetail.module.css";
+import {  getDogsId , clean} from "../../redux/action/actions";
 
-
-
-const BreedsDetail = (props) => {
+const BreedsDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const breedId = useSelector((state) => state.dogsDetail);
-
+  const allDogs = useSelector((state) => state.dogsDetail);
   useEffect(() => {
     dispatch(getDogsId(id))
     dispatch(clean());
   }, [dispatch, id]);
+ 
 
   return (
-    <div className={style.container}>
-      <div>
-        <Link to="/home">
-        <button>Go Home</button>
+    <>
+   
+      <div className={style.container}>
+      <Link to="/home">
+        <button className={style.button}><b>Go Home</b></button>
         </Link>
-        
-      </div>
-      {breedId.length === 0 ? (
+        <div className={style.main}>
+        {allDogs.length === 0 ? (
         <div></div>
       ) : (
-        <div>
+            <article className={style.article}>
+              <img
+                className={style.img}
+                src={allDogs.image ? allDogs.image : img}
+                alt={`img-${allDogs.name}`}
+              />
+              <section className={style.data}>
+                <h1 className={style.name}>{allDogs.name}</h1>
+                {allDogs.temperament ? (
+                  <p className={style.p}>
+                    <b>Temperament: </b> {allDogs.temperament}
+                  </p>
+                ) : (
+                  <p className={style.p}>
+                    <b>Temperament:</b> not found
+                  </p>
+                )}
+                <p className={style.p}>
+                  <b>Min height:</b> {allDogs.min_height} cm
+                </p>
+                <p className={style.p}>
+                  <b>Max height:</b> {allDogs.max_height} cm
+                </p>
+                <p className={style.p}>
+                  <b>Min weight:</b> {allDogs.min_weight} kg
+                </p>
+                <p className={style.p}>
+                  <b>Max weight:</b> {allDogs.max_weight} kg
+                </p>
+                <p className={style.p}>
+                  <b>Life span:</b> {allDogs.life_span}
+                </p>
+              </section>
+            </article>
           
-          <div className={style.main} key={breedId.id}>
-            <img  className={style.img} src={breedId.image} alt="img" width="150" height="150" />
-            <h3 className={style.name}>Name: {breedId.name}</h3>
-            <div >
-              <h4 className={style.p}>Weight:</h4>{" "}
-              <p className={style.p}>
-                Min: {breedId.min_weight}/kg - Max: {breedId.max_weight}/kg
-              </p>
-            </div>
-            <div>
-              <h4 className={style.p}>Height:</h4>{" "}
-              <p className={style.p} >
-                Min: {breedId.min_height}/cm - Max: {breedId.max_height}/cm
-              </p>
-            </div>
-            <div>
-              <h4 className={style.p}>Life-Span:</h4>
-              <p className={style.p} > {breedId.life_span} </p>
-            </div>
-            <div>
-              <h4 className={style.p}>Temperaments:</h4>
-              <p  className={style.p}>{breedId.temperament}</p>
-            </div>
-          </div>
+          )}
         </div>
-      )}
-
-    </div>
+      </div>
+    </>
   );
 };
+
 export default BreedsDetail;
