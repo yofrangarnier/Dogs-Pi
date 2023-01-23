@@ -36,7 +36,7 @@
     width: 400px;
     height: 330px;
     padding: 3em;
-    border: 25px solid rgba(68, 46, 124, 0.51);
+    border: 25px solid #c5981c;
     background-color: rgba(245, 245, 245, 0.6);
     backdrop-filter: blur(5px);
     border-radius: 10px;
@@ -76,7 +76,7 @@
     .data {
       width: 60%;
       height: 40%;
-      border: 10px solid rgba(68, 46, 124, 0.51);
+      border: 10px solid #c5981c;
       background-color: rgba(245, 245, 245, 0.6);
       backdrop-filter: blur(3px);
     }
